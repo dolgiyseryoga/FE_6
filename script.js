@@ -31,7 +31,6 @@ function count(Arr2) {
     })
     return sum;
 }
-
 console.log(Math.sqrt(count(Arr2)));
 
 //5
@@ -69,14 +68,32 @@ let NDate = (dat.getFullYear()+":"+M+":"+D+" "
 console.log(NDate);
 
 //7
-let string = 'aa aba abba abbba abca abea';
-
-console.log(str.match(/[a][b*]/gim));
-
-
+let st = 'aa aba abba abbba abca abea';
+let result = st.match(/a(b{1,}a)/g);
+console.log( result);
 
 //8 Задача
+
 let phone = prompt("Введите номер телефона в международном формате +375(33)3333333");
     let reg = /^\+375\([0-9][0-9]\)[0-9][0-9][0-9][0-9][0-9][0-9][0-9]/;
-
 console.log(reg.test(phone));
+
+//9 Задача
+
+function ValidMail(mail){
+if(/^[a-z0-9]{2,}@[\.a-z0-9_-]*\.[a-z]{2,11}$/.test(mail) == true){
+    console.log('Ваш email прошел валидацию!');
+} else {
+    console.log('Ваш email не прошел валидацию!');
+    }
+}
+ValidMail(prompt("Введите ваш email"))
+
+//10 Задача
+
+function ValidUrl(url) {
+      let Domain;
+      Domain = url.match(/^((http|https|ftp):\/\/)?(([A-Z0-9_-]*)(\.[A-Z]*)(\.[A-Z]{2}))/gi );
+        console.log(Domain);
+    }
+ValidUrl(prompt("Введите ваш url"))
